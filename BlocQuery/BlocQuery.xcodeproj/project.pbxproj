@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		888AE052BFF3ADBE28394C6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F0CEB1464722FEDB15D0DB /* libPods.a */; };
+		C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBA1BBB784800D4A2C9 /* main.m */; };
+		C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */; };
+		C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CC01BBB784800D4A2C9 /* ViewController.m */; };
+		C5FB2CC41BBB784800D4A2C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FB2CC21BBB784800D4A2C9 /* Main.storyboard */; };
+		C5FB2CC71BBB784800D4A2C9 /* BlocQuery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CC51BBB784800D4A2C9 /* BlocQuery.xcdatamodeld */; };
+		C5FB2CC91BBB784800D4A2C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FB2CC81BBB784800D4A2C9 /* Assets.xcassets */; };
+		C5FB2CCC1BBB784800D4A2C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FB2CCA1BBB784800D4A2C9 /* LaunchScreen.storyboard */; };
+		C5FB2CD71BBB784800D4A2C9 /* BlocQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CD61BBB784800D4A2C9 /* BlocQueryTests.m */; };
+		C5FB2CE21BBB784800D4A2C9 /* BlocQueryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CE11BBB784800D4A2C9 /* BlocQueryUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5FB2CD31BBB784800D4A2C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FB2CAE1BBB784800D4A2C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5FB2CB51BBB784800D4A2C9;
+			remoteInfo = BlocQuery;
+		};
+		C5FB2CDE1BBB784800D4A2C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FB2CAE1BBB784800D4A2C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5FB2CB51BBB784800D4A2C9;
+			remoteInfo = BlocQuery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43F0CEB1464722FEDB15D0DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A56DD1BF6C33DE615D53D0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7D036EEF99CD32F012EC5ACD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C5FB2CB61BBB784800D4A2C9 /* BlocQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5FB2CBA1BBB784800D4A2C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C5FB2CBC1BBB784800D4A2C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C5FB2CBF1BBB784800D4A2C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C5FB2CC01BBB784800D4A2C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C5FB2CC31BBB784800D4A2C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5FB2CC61BBB784800D4A2C9 /* BlocQuery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlocQuery.xcdatamodel; sourceTree = "<group>"; };
+		C5FB2CC81BBB784800D4A2C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5FB2CCB1BBB784800D4A2C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5FB2CCD1BBB784800D4A2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5FB2CD21BBB784800D4A2C9 /* BlocQueryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocQueryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5FB2CD61BBB784800D4A2C9 /* BlocQueryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocQueryTests.m; sourceTree = "<group>"; };
+		C5FB2CD81BBB784800D4A2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5FB2CDD1BBB784800D4A2C9 /* BlocQueryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocQueryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5FB2CE11BBB784800D4A2C9 /* BlocQueryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocQueryUITests.m; sourceTree = "<group>"; };
+		C5FB2CE31BBB784800D4A2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5FB2CB31BBB784800D4A2C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888AE052BFF3ADBE28394C6E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CCF1BBB784800D4A2C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CDA1BBB784800D4A2C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FB39A79D21DA7176F5A3702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43F0CEB1464722FEDB15D0DB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B52A3B391C42F889AAF204E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A56DD1BF6C33DE615D53D0C /* Pods.debug.xcconfig */,
+				7D036EEF99CD32F012EC5ACD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C5FB2CAD1BBB784800D4A2C9 = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CB81BBB784800D4A2C9 /* BlocQuery */,
+				C5FB2CD51BBB784800D4A2C9 /* BlocQueryTests */,
+				C5FB2CE01BBB784800D4A2C9 /* BlocQueryUITests */,
+				C5FB2CB71BBB784800D4A2C9 /* Products */,
+				6B52A3B391C42F889AAF204E /* Pods */,
+				2FB39A79D21DA7176F5A3702 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5FB2CB71BBB784800D4A2C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CB61BBB784800D4A2C9 /* BlocQuery.app */,
+				C5FB2CD21BBB784800D4A2C9 /* BlocQueryTests.xctest */,
+				C5FB2CDD1BBB784800D4A2C9 /* BlocQueryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5FB2CB81BBB784800D4A2C9 /* BlocQuery */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CBC1BBB784800D4A2C9 /* AppDelegate.h */,
+				C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */,
+				C5FB2CBF1BBB784800D4A2C9 /* ViewController.h */,
+				C5FB2CC01BBB784800D4A2C9 /* ViewController.m */,
+				C5FB2CC21BBB784800D4A2C9 /* Main.storyboard */,
+				C5FB2CC81BBB784800D4A2C9 /* Assets.xcassets */,
+				C5FB2CCA1BBB784800D4A2C9 /* LaunchScreen.storyboard */,
+				C5FB2CCD1BBB784800D4A2C9 /* Info.plist */,
+				C5FB2CC51BBB784800D4A2C9 /* BlocQuery.xcdatamodeld */,
+				C5FB2CB91BBB784800D4A2C9 /* Supporting Files */,
+			);
+			path = BlocQuery;
+			sourceTree = "<group>";
+		};
+		C5FB2CB91BBB784800D4A2C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CBA1BBB784800D4A2C9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5FB2CD51BBB784800D4A2C9 /* BlocQueryTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CD61BBB784800D4A2C9 /* BlocQueryTests.m */,
+				C5FB2CD81BBB784800D4A2C9 /* Info.plist */,
+			);
+			path = BlocQueryTests;
+			sourceTree = "<group>";
+		};
+		C5FB2CE01BBB784800D4A2C9 /* BlocQueryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB2CE11BBB784800D4A2C9 /* BlocQueryUITests.m */,
+				C5FB2CE31BBB784800D4A2C9 /* Info.plist */,
+			);
+			path = BlocQueryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5FB2CB51BBB784800D4A2C9 /* BlocQuery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5FB2CE61BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQuery" */;
+			buildPhases = (
+				5A55E1B4A38B43574D91CDE9 /* Check Pods Manifest.lock */,
+				C5FB2CB21BBB784800D4A2C9 /* Sources */,
+				C5FB2CB31BBB784800D4A2C9 /* Frameworks */,
+				C5FB2CB41BBB784800D4A2C9 /* Resources */,
+				EE4B7CDD5066BBB367201D7C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlocQuery;
+			productName = BlocQuery;
+			productReference = C5FB2CB61BBB784800D4A2C9 /* BlocQuery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5FB2CD11BBB784800D4A2C9 /* BlocQueryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5FB2CE91BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQueryTests" */;
+			buildPhases = (
+				C5FB2CCE1BBB784800D4A2C9 /* Sources */,
+				C5FB2CCF1BBB784800D4A2C9 /* Frameworks */,
+				C5FB2CD01BBB784800D4A2C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5FB2CD41BBB784800D4A2C9 /* PBXTargetDependency */,
+			);
+			name = BlocQueryTests;
+			productName = BlocQueryTests;
+			productReference = C5FB2CD21BBB784800D4A2C9 /* BlocQueryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5FB2CDC1BBB784800D4A2C9 /* BlocQueryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5FB2CEC1BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQueryUITests" */;
+			buildPhases = (
+				C5FB2CD91BBB784800D4A2C9 /* Sources */,
+				C5FB2CDA1BBB784800D4A2C9 /* Frameworks */,
+				C5FB2CDB1BBB784800D4A2C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5FB2CDF1BBB784800D4A2C9 /* PBXTargetDependency */,
+			);
+			name = BlocQueryUITests;
+			productName = BlocQueryUITests;
+			productReference = C5FB2CDD1BBB784800D4A2C9 /* BlocQueryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5FB2CAE1BBB784800D4A2C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "McCay Barnes";
+				TargetAttributes = {
+					C5FB2CB51BBB784800D4A2C9 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					C5FB2CD11BBB784800D4A2C9 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = C5FB2CB51BBB784800D4A2C9;
+					};
+					C5FB2CDC1BBB784800D4A2C9 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = C5FB2CB51BBB784800D4A2C9;
+					};
+				};
+			};
+			buildConfigurationList = C5FB2CB11BBB784800D4A2C9 /* Build configuration list for PBXProject "BlocQuery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5FB2CAD1BBB784800D4A2C9;
+			productRefGroup = C5FB2CB71BBB784800D4A2C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5FB2CB51BBB784800D4A2C9 /* BlocQuery */,
+				C5FB2CD11BBB784800D4A2C9 /* BlocQueryTests */,
+				C5FB2CDC1BBB784800D4A2C9 /* BlocQueryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5FB2CB41BBB784800D4A2C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FB2CCC1BBB784800D4A2C9 /* LaunchScreen.storyboard in Resources */,
+				C5FB2CC91BBB784800D4A2C9 /* Assets.xcassets in Resources */,
+				C5FB2CC41BBB784800D4A2C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CD01BBB784800D4A2C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CDB1BBB784800D4A2C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A55E1B4A38B43574D91CDE9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4B7CDD5066BBB367201D7C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5FB2CB21BBB784800D4A2C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FB2CC71BBB784800D4A2C9 /* BlocQuery.xcdatamodeld in Sources */,
+				C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */,
+				C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */,
+				C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CCE1BBB784800D4A2C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FB2CD71BBB784800D4A2C9 /* BlocQueryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FB2CD91BBB784800D4A2C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FB2CE21BBB784800D4A2C9 /* BlocQueryUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5FB2CD41BBB784800D4A2C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5FB2CB51BBB784800D4A2C9 /* BlocQuery */;
+			targetProxy = C5FB2CD31BBB784800D4A2C9 /* PBXContainerItemProxy */;
+		};
+		C5FB2CDF1BBB784800D4A2C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5FB2CB51BBB784800D4A2C9 /* BlocQuery */;
+			targetProxy = C5FB2CDE1BBB784800D4A2C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C5FB2CC21BBB784800D4A2C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FB2CC31BBB784800D4A2C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C5FB2CCA1BBB784800D4A2C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FB2CCB1BBB784800D4A2C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5FB2CE41BBB784800D4A2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C5FB2CE51BBB784800D4A2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5FB2CE71BBB784800D4A2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A56DD1BF6C33DE615D53D0C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlocQuery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQuery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C5FB2CE81BBB784800D4A2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D036EEF99CD32F012EC5ACD /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlocQuery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQuery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C5FB2CEA1BBB784800D4A2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlocQueryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQueryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlocQuery.app/BlocQuery";
+			};
+			name = Debug;
+		};
+		C5FB2CEB1BBB784800D4A2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlocQueryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQueryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlocQuery.app/BlocQuery";
+			};
+			name = Release;
+		};
+		C5FB2CED1BBB784800D4A2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlocQueryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQueryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BlocQuery;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C5FB2CEE1BBB784800D4A2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlocQueryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.BlocQueryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BlocQuery;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5FB2CB11BBB784800D4A2C9 /* Build configuration list for PBXProject "BlocQuery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FB2CE41BBB784800D4A2C9 /* Debug */,
+				C5FB2CE51BBB784800D4A2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FB2CE61BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQuery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FB2CE71BBB784800D4A2C9 /* Debug */,
+				C5FB2CE81BBB784800D4A2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FB2CE91BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQueryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FB2CEA1BBB784800D4A2C9 /* Debug */,
+				C5FB2CEB1BBB784800D4A2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FB2CEC1BBB784800D4A2C9 /* Build configuration list for PBXNativeTarget "BlocQueryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FB2CED1BBB784800D4A2C9 /* Debug */,
+				C5FB2CEE1BBB784800D4A2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C5FB2CC51BBB784800D4A2C9 /* BlocQuery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C5FB2CC61BBB784800D4A2C9 /* BlocQuery.xcdatamodel */,
+			);
+			currentVersion = C5FB2CC61BBB784800D4A2C9 /* BlocQuery.xcdatamodel */;
+			path = BlocQuery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C5FB2CAE1BBB784800D4A2C9 /* Project object */;
+}
