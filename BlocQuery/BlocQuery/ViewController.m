@@ -8,19 +8,18 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <PFLogInViewControllerDelegate>
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    PFLogInViewController *logInVC = [[PFLogInViewController alloc] init];
+    logInVC.delegate = self;
+    [self presentViewController:logInVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
