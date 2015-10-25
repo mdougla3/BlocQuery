@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		888AE052BFF3ADBE28394C6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F0CEB1464722FEDB15D0DB /* libPods.a */; };
+		C54E2CB11BBE20BF006D1A83 /* CreateQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54E2CB01BBE20BF006D1A83 /* CreateQuestionsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBA1BBB784800D4A2C9 /* main.m */; };
 		C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */; };
 		C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CC01BBB784800D4A2C9 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 		43F0CEB1464722FEDB15D0DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A56DD1BF6C33DE615D53D0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7D036EEF99CD32F012EC5ACD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C54E2CAF1BBE20BF006D1A83 /* CreateQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateQuestionsViewController.h; path = ../CreateQuestionsViewController.h; sourceTree = "<group>"; };
+		C54E2CB01BBE20BF006D1A83 /* CreateQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateQuestionsViewController.m; path = ../CreateQuestionsViewController.m; sourceTree = "<group>"; };
 		C5FB2CB61BBB784800D4A2C9 /* BlocQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FB2CBA1BBB784800D4A2C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5FB2CBC1BBB784800D4A2C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */,
 				C5FB2CBF1BBB784800D4A2C9 /* ViewController.h */,
 				C5FB2CC01BBB784800D4A2C9 /* ViewController.m */,
+				C54E2CAF1BBE20BF006D1A83 /* CreateQuestionsViewController.h */,
+				C54E2CB01BBE20BF006D1A83 /* CreateQuestionsViewController.m */,
 				C5FB2CC21BBB784800D4A2C9 /* Main.storyboard */,
 				C5FB2CC81BBB784800D4A2C9 /* Assets.xcassets */,
 				C5FB2CCA1BBB784800D4A2C9 /* LaunchScreen.storyboard */,
@@ -336,6 +341,7 @@
 				C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */,
 				C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */,
 				C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */,
+				C54E2CB11BBE20BF006D1A83 /* CreateQuestionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
