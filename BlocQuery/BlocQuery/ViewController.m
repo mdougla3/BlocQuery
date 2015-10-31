@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "QuestionDetailViewController.h"
 
 @interface ViewController () <PFLogInViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -90,6 +91,7 @@
         }
     }];
     
+    [self resignFirstResponder];
     self.addQuestionView.alpha = 0.0;
 }
 
@@ -137,6 +139,18 @@
     [self.questionsArray removeObjectAtIndex:indexPath.row];
     [self.questionsTableView reloadData];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"selectedQuestion"]) {
+        QuestionDetailViewController *questionDetailVC = segue.destinationViewController;
+        questionDetailVC.title = @"Question";
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"selectedQuestion" sender:self];
 }
 
 @end
