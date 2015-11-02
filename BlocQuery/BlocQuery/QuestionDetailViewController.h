@@ -11,4 +11,7 @@
 
 @interface QuestionDetailViewController : UIViewController
 
+@property (strong, nonatomic) NSString *selectedQuestion;
+@property (strong, nonatomic) NSString *questionID; 
+
 @end

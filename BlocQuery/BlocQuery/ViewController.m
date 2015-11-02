@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSMutableArray *questionsArray;
 @property (weak, nonatomic) IBOutlet UITableView *questionsTableView;
 @property (strong, nonatomic) NSString *currentQuestion;
+@property (strong, nonatomic) NSString *currentQuestionID;
 
 @property (strong, nonatomic) IBOutlet UIView *addQuestionView;
 @property (weak, nonatomic) IBOutlet UITextView *addQuestionTextField;
@@ -141,16 +142,27 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PFObject *selectedQuestionText = self.questionsArray[indexPath.row];
+    self.currentQuestion = selectedQuestionText[@"questionText"];
+    self.currentQuestionID = selectedQuestionText[@"objectId"];
+    
+    [self performSegueWithIdentifier:@"selectedQuestion" sender:self];
+    
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"selectedQuestion"]) {
         QuestionDetailViewController *questionDetailVC = segue.destinationViewController;
+        
         questionDetailVC.title = @"Question";
+        questionDetailVC.selectedQuestion = self.currentQuestion;
+        questionDetailVC.questionID = self.currentQuestionID;
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"selectedQuestion" sender:self];
-}
+
 
 @end
