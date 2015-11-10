@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "QuestionDetailViewController.h"
 
 @interface ViewController () <PFLogInViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *questionsArray;
 @property (weak, nonatomic) IBOutlet UITableView *questionsTableView;
-@property (strong, nonatomic) NSString *currentQuestion;
+@property (strong, nonatomic) PFObject *currentQuestion;
 
 @property (strong, nonatomic) IBOutlet UIView *addQuestionView;
 @property (weak, nonatomic) IBOutlet UITextView *addQuestionTextField;
@@ -90,6 +91,7 @@
         }
     }];
     
+    [self resignFirstResponder];
     self.addQuestionView.alpha = 0.0;
 }
 
@@ -138,5 +140,26 @@
     [self.questionsTableView reloadData];
     
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PFObject *selectedQuestionText = self.questionsArray[indexPath.row];
+    self.currentQuestion = selectedQuestionText;
+    
+    [self performSegueWithIdentifier:@"selectedQuestion" sender:self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"selectedQuestion"]) {
+        QuestionDetailViewController *questionDetailVC = segue.destinationViewController;
+        
+        questionDetailVC.title = @"Question";
+        questionDetailVC.selectedQuestion = self.currentQuestion;
+    }
+}
+
+
 
 @end
