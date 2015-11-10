@@ -26,19 +26,12 @@
     
     self.addAnswerView.alpha = 0.0;
     
-    PFQuery *answerQuery = [PFQuery queryWithClassName:@"Question"];
-    [answerQuery whereKey:@"questionText" equalTo:self.selectedQuestion];
+    PFQuery *answerQuery = [PFQuery queryWithClassName:@"Answer"];
+    [answerQuery whereKey:@"parent" equalTo:self.selectedQuestion];
     [answerQuery findObjectsInBackgroundWithBlock:^(NSArray * answers, NSError * _Nullable error) {
         self.answers = [answers mutableCopy];
         [self.answerTableView reloadData];
     }];
-    
-    //    [answerQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        if (!error) {
-//            self.answers = [objects mutableCopy];
-//            [self.answerTableView reloadData];
-//        }
-//    }];
     
 }
 
@@ -53,19 +46,19 @@
     
     if (indexPath.row == 0) {
         
-        cell.textLabel.text = self.selectedQuestion;
+        cell.textLabel.text = self.selectedQuestion[@"questionText"];
         cell.backgroundColor = [UIColor grayColor];
     }
     else {
-        PFObject *answerText = self.answers[indexPath.row];
-        cell.textLabel.text = answerText[@"answers"];
+        PFObject *answerText = self.answers[indexPath.row - 1];
+        cell.textLabel.text = answerText[@"answerText"];
     }
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.answers.count;
+    return self.answers.count + 1;
 }
 
 - (IBAction)giveAnAnswerButtonPressed:(UIBarButtonItem *)sender {
@@ -77,27 +70,27 @@
 - (IBAction)saveButtonPressed:(UIButton *)sender {
 
     self.addedAnswer = self.answerTextField.text;
-    [self.answers addObject:self.addedAnswer];
     
-    PFQuery *questionQuery = [PFQuery queryWithClassName:@"Question"];
-    [questionQuery getObjectInBackgroundWithId:self.questionID block:^(PFObject *question, NSError * _Nullable error) {
-
-        [question addUniqueObject:self.addedAnswer forKey:@"answers"];
-        [question saveInBackground];
+    PFObject *addNewAnswer = [PFObject objectWithClassName:@"Answer"];
+    addNewAnswer[@"answerText"] = self.addedAnswer;
+    
+    [self.answers addObject:addNewAnswer];
+    
+    [self.selectedQuestion setObject:self.answers forKey:@"answers"];
+    
+    PFRelation *relation = [addNewAnswer relationForKey:@"parent"];
+    [relation addObject:self.selectedQuestion];
+    
+    [addNewAnswer saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"Saved");
+        }
     }];
     
-//    PFObject *addNewAnswer = [PFObject objectWithClassName:@"Question"];
-//    [addNewAnswer addUniqueObject:self.addedAnswer forKey:@"answers"];
-//    [addNewAnswer saveInBackground];
-//    
-//    PFQuery *answerQuery = [PFQuery queryWithClassName:@"Answer"];
-//    [answerQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        if (!error) {
-//            self.answers = [objects mutableCopy];
-//            [self.answerTableView reloadData];
-//        }
-//    }];
-    
+    //[self.selectedQuestion save];
+
+    [self.answerTableView reloadData];
+
     self.addAnswerView.alpha = 0.0;
 
 }
