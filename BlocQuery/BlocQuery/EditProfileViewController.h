@@ -11,4 +11,7 @@
 
 @interface EditProfileViewController : UIViewController
 
+@property (strong, nonatomic) PFUser *user;
+
+
 @end

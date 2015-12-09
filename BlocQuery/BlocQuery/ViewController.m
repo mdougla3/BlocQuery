@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "QuestionDetailViewController.h"
+#import "QuestionTableViewCell.h"
+#import "QuestionsListTableViewCell.h"
+#import "EditProfileViewController.h"
 
 @interface ViewController () <PFLogInViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -17,6 +20,12 @@
 
 @property (strong, nonatomic) IBOutlet UIView *addQuestionView;
 @property (weak, nonatomic) IBOutlet UITextView *addQuestionTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userProfilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *upVotesTotalLabel;
+@property (strong, nonatomic) NSArray *sortedQuestionListArray;
+
 
 
 @end
@@ -36,6 +45,8 @@
     
     if (currentUser) {
         PFQuery *query = [PFQuery queryWithClassName:@"Question"];
+        [query includeKey:@"author"];
+        [query orderByDescending:@"upVotes"];
         [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             if (!error) {
                 self.questionsArray = [objects mutableCopy];
@@ -74,20 +85,22 @@
 -(IBAction)saveButtonPressed:(id)sender {
     PFObject *question = [PFObject objectWithClassName:@"Question"];
     question[@"questionText"] = self.addQuestionTextField.text;
+    question[@"author"] = [PFUser currentUser];
     
     [question saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"Question"];
+            [query includeKey:@"author"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if (!error) {
+                    self.questionsArray = [objects mutableCopy];
+                    [self.questionsTableView reloadData];
+                }
+            }];
         }
         else {
             // Log error
-        }
-    }];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Question"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (!error) {
-            self.questionsArray = [objects mutableCopy];
-            [self.questionsTableView reloadData];
         }
     }];
     
@@ -113,10 +126,15 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    
+    QuestionsListTableViewCell *cell = [self.questionsTableView dequeueReusableCellWithIdentifier:@"questionCell"];
     
     PFObject *questions = self.questionsArray[indexPath.row];
-    cell.textLabel.text = questions[@"questionText"];
+    
+    cell.numberOfUpVotesLabel.text = [NSString stringWithFormat:@"%@", questions[@"upVotes"]];
+    [cell.userNameButtonLabel setTitle:questions[@"author"][@"username"] forState:UIControlStateNormal];
+    cell.questionTextLabel.text = questions[@"questionText"];;
+    cell.userNameButtonLabel.tag = indexPath.row;
     
     return cell; 
 }
@@ -150,7 +168,7 @@
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
     
     if ([segue.identifier isEqualToString:@"selectedQuestion"]) {
         QuestionDetailViewController *questionDetailVC = segue.destinationViewController;
@@ -158,8 +176,19 @@
         questionDetailVC.title = @"Question";
         questionDetailVC.selectedQuestion = self.currentQuestion;
     }
+    else if([segue.identifier isEqualToString:@"viewProfile"]) {
+        EditProfileViewController *viewProfileVC = segue.destinationViewController;
+        
+        viewProfileVC.navigationItem.rightBarButtonItem = nil;
+        viewProfileVC.user = self.questionsArray[sender.tag][@"author"];
+    }
 }
 
+- (IBAction)upVoteButtonPressed:(UIButton *)sender {
+}
+- (IBAction)userNameButtonPressed:(UIButton *)sender {
+    
+}
 
 
 @end

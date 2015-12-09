@@ -19,10 +19,8 @@
 @property (weak, nonatomic) UIImage *selectedProfilePicture;
 
 @property (strong, nonatomic) PFFile *imageFile;
-@property (strong, nonatomic) PFUser *user;
 
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecogizer;
-
 
 @end
 
@@ -30,7 +28,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.user = [PFUser currentUser];
+    
+    if (!self.user) {
+        self.user = [PFUser currentUser];
+        self.tapGestureRecogizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeImage:)];
+        self.profilePictureImage.userInteractionEnabled = YES;
+        [self.profilePictureImage addGestureRecognizer:self.tapGestureRecogizer];
+    }
+    else {
+        self.aboutMeTextView.editable = false;
+    }
+    
     PFFile *userImageFile = self.user[@"photo"];
     self.aboutMeTextView.text = self.user[@"imageDescription"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -43,9 +51,6 @@
             self.profilePictureImage.image = [UIImage imageNamed:@"ProfilePic.jpg"];
         }
     }];
-    self.tapGestureRecogizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeImage:)];
-    self.profilePictureImage.userInteractionEnabled = YES;
-    [self.profilePictureImage addGestureRecognizer:self.tapGestureRecogizer];
     
     if (self.user[@"name"] != nil) {
         self.nameTextField.alpha = 0.0;
