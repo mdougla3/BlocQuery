@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		888AE052BFF3ADBE28394C6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F0CEB1464722FEDB15D0DB /* libPods.a */; };
-		C5AD0A781BDF261600C375A7 /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AD0A771BDF261600C375A7 /* QuestionDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C53A9F991C0D2D3400754A24 /* ProfilePic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C53A9F981C0D2D3400754A24 /* ProfilePic.jpg */; };
+		C542405D1C0D40650042855B /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C542405C1C0D40650042855B /* QuestionTableViewCell.m */; };
+		C5AD0A781BDF261600C375A7 /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AD0A771BDF261600C375A7 /* QuestionDetailViewController.m */; };
+		C5B2A48C1C137D18003EBFA6 /* QuestionsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B2A48B1C137D18003EBFA6 /* QuestionsListTableViewCell.m */; };
+		C5F81EF61BF17E90009345DC /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F81EF51BF17E90009345DC /* EditProfileViewController.m */; };
+		C5F81EF91BF1AD58009345DC /* UIImage+Sizing.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F81EF81BF1AD58009345DC /* UIImage+Sizing.m */; };
 		C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBA1BBB784800D4A2C9 /* main.m */; };
 		C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */; };
 		C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2CC01BBB784800D4A2C9 /* ViewController.m */; };
@@ -41,8 +46,17 @@
 		43F0CEB1464722FEDB15D0DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A56DD1BF6C33DE615D53D0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7D036EEF99CD32F012EC5ACD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C53A9F981C0D2D3400754A24 /* ProfilePic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ProfilePic.jpg; path = ../../../../ProfilePic.jpg; sourceTree = "<group>"; };
+		C542405B1C0D40650042855B /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
+		C542405C1C0D40650042855B /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		C5AD0A761BDF261600C375A7 /* QuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewController.h; sourceTree = "<group>"; };
 		C5AD0A771BDF261600C375A7 /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
+		C5B2A48A1C137D18003EBFA6 /* QuestionsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsListTableViewCell.h; sourceTree = "<group>"; };
+		C5B2A48B1C137D18003EBFA6 /* QuestionsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsListTableViewCell.m; sourceTree = "<group>"; };
+		C5F81EF41BF17E90009345DC /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		C5F81EF51BF17E90009345DC /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		C5F81EF71BF1AD58009345DC /* UIImage+Sizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Sizing.h"; sourceTree = "<group>"; };
+		C5F81EF81BF1AD58009345DC /* UIImage+Sizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Sizing.m"; sourceTree = "<group>"; };
 		C5FB2CB61BBB784800D4A2C9 /* BlocQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FB2CBA1BBB784800D4A2C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5FB2CBC1BBB784800D4A2C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,10 +147,18 @@
 				C5FB2CBC1BBB784800D4A2C9 /* AppDelegate.h */,
 				C5FB2CBD1BBB784800D4A2C9 /* AppDelegate.m */,
 				C5FB2CC21BBB784800D4A2C9 /* Main.storyboard */,
-				C5AD0A761BDF261600C375A7 /* QuestionDetailViewController.h */,
-				C5AD0A771BDF261600C375A7 /* QuestionDetailViewController.m */,
 				C5FB2CBF1BBB784800D4A2C9 /* ViewController.h */,
 				C5FB2CC01BBB784800D4A2C9 /* ViewController.m */,
+				C5AD0A761BDF261600C375A7 /* QuestionDetailViewController.h */,
+				C5AD0A771BDF261600C375A7 /* QuestionDetailViewController.m */,
+				C5F81EF41BF17E90009345DC /* EditProfileViewController.h */,
+				C5F81EF51BF17E90009345DC /* EditProfileViewController.m */,
+				C5B2A48A1C137D18003EBFA6 /* QuestionsListTableViewCell.h */,
+				C5B2A48B1C137D18003EBFA6 /* QuestionsListTableViewCell.m */,
+				C542405B1C0D40650042855B /* QuestionTableViewCell.h */,
+				C542405C1C0D40650042855B /* QuestionTableViewCell.m */,
+				C5F81EF71BF1AD58009345DC /* UIImage+Sizing.h */,
+				C5F81EF81BF1AD58009345DC /* UIImage+Sizing.m */,
 				C5FB2CC81BBB784800D4A2C9 /* Assets.xcassets */,
 				C5FB2CCA1BBB784800D4A2C9 /* LaunchScreen.storyboard */,
 				C5FB2CCD1BBB784800D4A2C9 /* Info.plist */,
@@ -149,6 +171,7 @@
 		C5FB2CB91BBB784800D4A2C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C53A9F981C0D2D3400754A24 /* ProfilePic.jpg */,
 				C5FB2CBA1BBB784800D4A2C9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -279,6 +302,7 @@
 			files = (
 				C5FB2CCC1BBB784800D4A2C9 /* LaunchScreen.storyboard in Resources */,
 				C5FB2CC91BBB784800D4A2C9 /* Assets.xcassets in Resources */,
+				C53A9F991C0D2D3400754A24 /* ProfilePic.jpg in Resources */,
 				C5FB2CC41BBB784800D4A2C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5AD0A781BDF261600C375A7 /* QuestionDetailViewController.m in Sources */,
+				C5B2A48C1C137D18003EBFA6 /* QuestionsListTableViewCell.m in Sources */,
 				C5FB2CC71BBB784800D4A2C9 /* BlocQuery.xcdatamodeld in Sources */,
+				C5F81EF61BF17E90009345DC /* EditProfileViewController.m in Sources */,
+				C5F81EF91BF1AD58009345DC /* UIImage+Sizing.m in Sources */,
 				C5FB2CC11BBB784800D4A2C9 /* ViewController.m in Sources */,
+				C542405D1C0D40650042855B /* QuestionTableViewCell.m in Sources */,
 				C5FB2CBE1BBB784800D4A2C9 /* AppDelegate.m in Sources */,
 				C5FB2CBB1BBB784800D4A2C9 /* main.m in Sources */,
 			);

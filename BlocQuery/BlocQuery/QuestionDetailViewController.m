@@ -7,6 +7,8 @@
 //
 
 #import "QuestionDetailViewController.h"
+#import "QuestionTableViewCell.h"
+
 
 @interface QuestionDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *answerTableView;
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSString *addedAnswer;
+@property (strong, nonatomic) NSArray *numberOfUpVotes;
 
 @end
 
@@ -50,8 +53,14 @@
         cell.backgroundColor = [UIColor grayColor];
     }
     else {
+        
+        QuestionTableViewCell *cell = [self.answerTableView dequeueReusableCellWithIdentifier:@"answerCell"];
+        
         PFObject *answerText = self.answers[indexPath.row - 1];
-        cell.textLabel.text = answerText[@"answerText"];
+        
+        cell.answerTextLabel.text = answerText[@"answerText"];
+        cell.answerTotalNumberOfUpVotesLabel.text = [NSString stringWithFormat:@"%@", answerText[@"upVotes"]];
+    
     }
     return cell;
 }
