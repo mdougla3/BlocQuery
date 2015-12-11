@@ -10,15 +10,15 @@
 #import "QuestionTableViewCell.h"
 
 
-@interface QuestionDetailViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface QuestionDetailViewController () <UITableViewDataSource, UITableViewDelegate, QuestionWithAnswersTableViewCellDelegate>
 
 @property (strong, nonatomic) NSMutableArray *answers;
 @property (weak, nonatomic) IBOutlet UIView *addAnswerView;
 @property (weak, nonatomic) IBOutlet UITextView *answerTextField;
 @property (weak, nonatomic) IBOutlet UITableView *answerTableView;
-@property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSString *addedAnswer;
-@property (strong, nonatomic) NSArray *numberOfUpVotes;
+@property (strong, nonatomic) NSString *numberOfUpVotes;
+@property (assign) int upVotes;
 
 @end
 
@@ -45,24 +45,45 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
     if (indexPath.row == 0) {
         
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"questionCell"];
+        
         cell.textLabel.text = self.selectedQuestion[@"questionText"];
         cell.backgroundColor = [UIColor grayColor];
+        
+        return cell;
     }
     else {
         
-        QuestionTableViewCell *cell = [self.answerTableView dequeueReusableCellWithIdentifier:@"answerCell"];
+        QuestionTableViewCell *cell = [self.answerTableView dequeueReusableCellWithIdentifier:@"answerCell" forIndexPath:indexPath];
+        cell.delegate = self;
         
         PFObject *answerText = self.answers[indexPath.row - 1];
         
+        [cell.delegate upVoteButtonPressed:answerText];
+        
+        
+        cell.answer = answerText;
         cell.answerTextLabel.text = answerText[@"answerText"];
-        cell.answerTotalNumberOfUpVotesLabel.text = [NSString stringWithFormat:@"%@", answerText[@"upVotes"]];
-    
+        cell.answerTextLabel.numberOfLines = 0;
+        [cell.answerTextLabel sizeToFit];
+        cell.answerUpVotes.text = [answerText[@"upVotes"] stringValue];
+        self.upVotes = [answerText[@"upVotes"] intValue];
+        
+        return cell;
     }
-    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 70;
+    }
+    else {
+        return 157;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -96,13 +117,12 @@
         }
     }];
     
-    //[self.selectedQuestion save];
-
     [self.answerTableView reloadData];
 
     self.addAnswerView.alpha = 0.0;
 
 }
+
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
     self.addAnswerView.alpha = 0.0;
 }
@@ -120,6 +140,18 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+- (void)upVoteButtonPressed:(PFObject *)answer{
+    self.upVotes = self.upVotes++;
+    [answer incrementKey:@"upVotes" byAmount:[NSNumber numberWithInt:1]];
+    [answer saveEventually];
+    
+    //[self.answerTableView reloadData];
+    
+}
+- (void)userNameButtonPressed:(PFObject *)answer{
+    
 }
 
 

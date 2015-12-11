@@ -15,8 +15,14 @@
 }
 
 - (IBAction)upVoteButtonPressed:(UIButton *)sender {
-    
-}
+    if ([sender.titleLabel.text isEqual: @"UpVote"]) {
+        [sender setTitle:@"DownVote" forState:UIControlStateNormal];
+        
+    }
+    else {
+        [sender setTitle:@"UpVote" forState:UIControlStateNormal];
+        
+    }}
 
 
 @end
