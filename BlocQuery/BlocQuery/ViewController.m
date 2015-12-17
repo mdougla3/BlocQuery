@@ -75,7 +75,6 @@
 
 - (IBAction)logOutButton:(UIButton *)sender {
     [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
     
     PFLogInViewController *logInVC = [[PFLogInViewController alloc] init];
     logInVC.delegate = self;

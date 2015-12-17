@@ -20,10 +20,17 @@
 
 @property (weak, nonatomic) PFObject *answer;
 
+@property (nonatomic, weak) id <QuestionWithAnswersTableViewCellDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet UIImageView *userProfilePictureImage;
 @property (weak, nonatomic) IBOutlet UILabel *answerTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *answerTotalNumberOfUpVotesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *answerUpVotes;
+@property (weak, nonatomic) IBOutlet UIButton *upVoteLabel;
+
+- (IBAction)upVoteButtonPressed:(UIButton *)sender;
+- (IBAction)userNameButtonPressed:(UIButton *)sender;
+
 
 
 @end
