@@ -57,28 +57,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UpVotes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usS-LX-t4J">
-                                                    <rect key="frame" x="527" y="70" width="65" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="C1L-B6-jtU"/>
-                                                        <constraint firstAttribute="width" constant="65" id="e0v-Jl-307"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYb-kH-dCL">
-                                                    <rect key="frame" x="496" y="72" width="39" height="17"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="39" id="pW3-KZ-Tm5"/>
-                                                        <constraint firstAttribute="height" constant="17" id="xUP-kW-YxI"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asked By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXd-st-pGr">
                                                     <rect key="frame" x="16" y="70" width="76" height="21"/>
                                                     <animations/>
@@ -113,11 +91,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IGX-ot-GpB" secondAttribute="bottom" constant="-6" id="HXA-dQ-EYR"/>
                                                 <constraint firstItem="IGX-ot-GpB" firstAttribute="leading" secondItem="lXd-st-pGr" secondAttribute="trailing" constant="-6" id="Is7-cW-u5J"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="usS-LX-t4J" secondAttribute="bottom" constant="1" id="KsN-28-ptC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="usS-LX-t4J" secondAttribute="trailing" id="PmA-EX-Y63"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lXd-st-pGr" secondAttribute="bottom" constant="1" id="REZ-98-9d3"/>
-                                                <constraint firstItem="usS-LX-t4J" firstAttribute="leading" secondItem="MYb-kH-dCL" secondAttribute="trailing" constant="-8" id="Tjj-zD-YPd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MYb-kH-dCL" secondAttribute="bottom" constant="3" id="TqF-Yc-RdT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2md-hY-kzJ" secondAttribute="trailing" constant="4" id="XWe-Ue-IyO"/>
                                                 <constraint firstItem="lXd-st-pGr" firstAttribute="leading" secondItem="Nat-hD-Bhg" secondAttribute="leadingMargin" constant="8" id="Xa2-ZG-LpU"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IGX-ot-GpB" secondAttribute="bottom" constant="-5" id="Xlw-Ld-RgH"/>
@@ -132,7 +106,6 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="numberOfUpVotesLabel" destination="MYb-kH-dCL" id="bgB-4E-gBf"/>
                                             <outlet property="questionTextLabel" destination="2md-hY-kzJ" id="zKB-uu-ZUu"/>
                                             <outlet property="userNameButtonLabel" destination="IGX-ot-GpB" id="Sut-hB-LMU"/>
                                         </connections>
@@ -295,6 +268,7 @@
                                                     <state key="normal" title="UserName"/>
                                                     <connections>
                                                         <action selector="userNameButtonPressed:" destination="1Rg-J3-AiW" eventType="touchUpInside" id="Vos-xa-YUE"/>
+                                                        <segue destination="mMJ-Ui-tG9" kind="show" identifier="viewProfile" id="pIC-hf-Wxh"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlz-GM-ILC">
@@ -433,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG3-Q4-DjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="652"/>
+            <point key="canvasLocation" x="1947" y="646"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="GUn-Q7-VQ6">
@@ -539,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCy-MH-tqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="-60"/>
+            <point key="canvasLocation" x="1947" y="-64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Lr-6k-TfF">
@@ -562,6 +536,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZJi-uw-7FN"/>
+        <segue reference="pIC-hf-Wxh"/>
     </inferredMetricsTieBreakers>
 </document>

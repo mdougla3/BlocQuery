@@ -8,6 +8,7 @@
 
 #import "QuestionDetailViewController.h"
 #import "QuestionTableViewCell.h"
+#import "EditProfileViewController.h"
 
 
 @interface QuestionDetailViewController () <UITableViewDataSource, UITableViewDelegate, QuestionWithAnswersTableViewCellDelegate>
@@ -18,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *answerTableView;
 @property (strong, nonatomic) NSString *addedAnswer;
 @property (strong, nonatomic) NSString *numberOfUpVotes;
-@property (assign) int upVotes;
+
+@property (strong, nonatomic) QuestionTableViewCell *cell;
 
 @end
 
@@ -31,6 +33,8 @@
     
     PFQuery *answerQuery = [PFQuery queryWithClassName:@"Answer"];
     [answerQuery whereKey:@"parent" equalTo:self.selectedQuestion];
+    [answerQuery includeKey:@"users"];
+    [answerQuery includeKey:@"author"];
     [answerQuery findObjectsInBackgroundWithBlock:^(NSArray * answers, NSError * _Nullable error) {
         self.answers = [answers mutableCopy];
         [self.answerTableView reloadData];
@@ -58,19 +62,19 @@
     else {
         
         QuestionTableViewCell *cell = [self.answerTableView dequeueReusableCellWithIdentifier:@"answerCell" forIndexPath:indexPath];
-        cell.delegate = self;
         
         PFObject *answerText = self.answers[indexPath.row - 1];
         
-        [cell.delegate upVoteButtonPressed:answerText];
-        
-        
-        cell.answer = answerText;
+        cell.delegate = self;
+        cell.answer = answerText; 
         cell.answerTextLabel.text = answerText[@"answerText"];
         cell.answerTextLabel.numberOfLines = 0;
         [cell.answerTextLabel sizeToFit];
+        
+        cell.userNameLabel.tag = indexPath.row;
+        [cell.userNameLabel setTitle:answerText[@"author"][@"username"] forState:UIControlStateNormal];
+        
         cell.answerUpVotes.text = [answerText[@"upVotes"] stringValue];
-        self.upVotes = [answerText[@"upVotes"] intValue];
         
         return cell;
     }
@@ -103,6 +107,8 @@
     
     PFObject *addNewAnswer = [PFObject objectWithClassName:@"Answer"];
     addNewAnswer[@"answerText"] = self.addedAnswer;
+    addNewAnswer[@"author"] = [PFUser currentUser];
+
     
     [self.answers addObject:addNewAnswer];
     
@@ -143,13 +149,40 @@
 }
 
 - (void)upVoteButtonPressed:(PFObject *)answer{
-    self.upVotes = self.upVotes++;
-    [answer incrementKey:@"upVotes" byAmount:[NSNumber numberWithInt:1]];
-    [answer saveEventually];
     
-    //[self.answerTableView reloadData];
     
+    NSMutableArray *users = answer[@"users"];
+    
+    if (!users) {
+        users = [NSMutableArray array];
+    }
+    if ([users containsObject:[PFUser currentUser]]) {
+        [users removeObject:[PFUser currentUser]];
+        [answer incrementKey:@"upVotes" byAmount:[NSNumber numberWithInt:-1]];
+    }
+    else {
+
+        [users addObject:[PFUser currentUser]];
+        [answer incrementKey:@"upVotes" byAmount:[NSNumber numberWithInt:1]];
+    }
+    
+    answer[@"users"] = users;
+    
+    [answer saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self.answerTableView reloadData];
+    }];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
+    
+    if([segue.identifier isEqualToString:@"viewProfile"]) {
+        EditProfileViewController *viewProfileVC = segue.destinationViewController;
+    
+        viewProfileVC.navigationItem.rightBarButtonItem = nil;
+        viewProfileVC.user = self.answers[sender.tag][@"author"];
+    }
+}
+
 - (void)userNameButtonPressed:(PFObject *)answer{
     
 }
