@@ -179,7 +179,7 @@
         EditProfileViewController *viewProfileVC = segue.destinationViewController;
     
         viewProfileVC.navigationItem.rightBarButtonItem = nil;
-        viewProfileVC.user = self.answers[sender.tag][@"author"];
+        viewProfileVC.user = self.answers[sender.tag - 1][@"author"];
     }
 }
 
